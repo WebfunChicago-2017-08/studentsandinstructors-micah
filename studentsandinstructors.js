@@ -18,30 +18,29 @@ var users = {
     ]
 }
 
-function studentsAndInstructorsOptional() {   //Can't quite get it!!! #*!&#
-    var index = 0;
-    for (var i in users) {
-        console.log(i);
-        for (var student in users[i]) {
-            index++;
-            console.log(
-                index, '-', users.Students[student].first_name, users.Students[student].last_name, "-", (users.Students[student].first_name.length + users.Students[student].last_name.length));
-        }
+function studentsAndInstructorsOptional() {   
+
+  for(var key in users){
+    console.log(key);
+    var type = users[key];
+          var place = 1;
+
+    for(var index in type){
+      console.log(place + " - " + type[index].first_name + " " + type[index].last_name + " - "+ (type[index].first_name.length + type[index].last_name.length));
+      place++;
     }
+  }
 }
+
 
 function studentsAndInstructors() {
     for (var i in students) {
         console.log(students[i].first_name, students[i].last_name);
 
     }
+    console.log("\n");
 }
 
 studentsAndInstructors();
-
 studentsAndInstructorsOptional();
 
-// Michael Jordan
-// John Rosales
-// Mark Guillen
-// KB Tonel
